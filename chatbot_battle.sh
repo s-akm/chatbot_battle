@@ -1,4 +1,4 @@
-#!bin/bash -eu
+#!/bin/bash -eu
 
 SENTIMENT1=0
 SENTIMENT2=0
