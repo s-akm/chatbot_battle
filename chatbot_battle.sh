@@ -38,9 +38,9 @@ while :
 do
     result1=$(call_cotogoto ${result2:-${1:-"こんにちは。"}})
     SENTIMENT1=$(echo "${SENTIMENT1} + $(analyze_sentiment ${result1})" | bc )
-    printf "\e[33m%s\n\e[m" "COTOGOTO(${SENTIMENT1})>> ${result1}"
+    printf "\e[33m%s\e[m%s\n" "COTOGOTO(${SENTIMENT1})>> " "${result1}"
 
     result2=$(call_userlocal ${result1})
     SENTIMENT2=$(echo "${SENTIMENT2} + $(analyze_sentiment ${result2})" | bc )
-    printf "\e[34m%s\n\e[m" "USERLOCAL(${SENTIMENT2})>> ${result2}"
+    printf "\e[34m%s\e[m%s\n" "USERLOCAL(${SENTIMENT2})>> " "${result2}"
 done
